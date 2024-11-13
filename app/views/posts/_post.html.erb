@@ -1,0 +1,22 @@
+<%= link_to post do %>
+  <div id="<%= dom_id post %>" class="post-container" style="text-align:center;">
+    <h2>
+      <%= post.title %>
+    </h2>
+    <p>
+      <%= post.body %>
+    </p>
+    <% if post.image.attached? %>
+      <%= image_tag post.image, class: "post-image" %>
+      <p>Image URL: <%= url_for(post.image) %></p> <!-- Debugging line to display the image URL -->
+    <% else %>
+      <p>No image available</p> <!-- Debugging line to indicate no image -->
+    <% end %>
+  </div>
+<% end %>
+<style>
+  .post-image {
+    max-width: 100%;
+    height: auto;
+  }
+</style>

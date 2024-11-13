@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Subreddits" %>
+
+<h1>Subreddits</h1>
+
+<div id="subreddits">
+  <% @subreddits.each do |subreddit| %>
+    <%= render subreddit %>
+  <% end %>
+</div>
+
+<%= link_to "New subreddit", new_subreddit_path %>
